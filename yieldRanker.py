@@ -1,22 +1,19 @@
 
 
 
+
+
 def normalizeData(data):
 
-    tupleData = items(data) # tuple in the form (apr(int), poolName(string))
+    max = max(values(data))
 
-    aprData = []
+    for key in data:
+        data[key] = data[key] / max
 
-    for i in tupleData:
-        aprData.append(i[0])
+    return data
 
-    normalVector = []
 
-    for i in tupleData:
-        pair = (i[0] / max(aprData), i[1])
-        normalVector.append(pair)
 
-    return normalVector
 
 
 
